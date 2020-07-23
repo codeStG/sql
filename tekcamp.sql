@@ -5,6 +5,7 @@ USE students;
 /* The name of the original SQL db is "students", which contains a single table called "tekcamp01" */
 
 /* Below is for Part 1, 2, 3 & 4 */
+DROP DATABASE IF EXISTS `tc1-George-Torres`;
 
 CREATE DATABASE IF NOT EXISTS `tc1-George-Torres`;
 
@@ -38,7 +39,7 @@ VALUES("Gotham", "Katta", 'M', "Bachelors Degree");
 INSERT INTO tekcampers(first_name, last_name, gender, education)
 VALUES("John", "Bozarov", 'M', "Bachelors Degree");
 INSERT INTO tekcampers(first_name, last_name, gender, education)
-VALUES("John", "Kol", 'M', NULL);
+VALUES("John", "Kol", 'M', "Some College");
 INSERT INTO tekcampers(first_name, last_name, gender, education)
 VALUES("Justin", "Cheng", 'M', "Some College");
 INSERT INTO tekcampers(first_name, last_name, gender, education)
@@ -285,5 +286,16 @@ ADD bootcamp VARCHAR(25);
 
 ALTER TABLE `ta-dylan`
 ADD bootcamp VARCHAR(25);
+
+UPDATE `tc1-George-Torres`.`tekcampers` SET `bootcamp` = 'Coding Dojo' WHERE (`id` = '6');
+UPDATE `tc1-George-Torres`.`tekcampers` SET `bootcamp` = 'DevMountain' WHERE (`id` = '17');
+UPDATE `tc1-George-Torres`.`tekcampers` SET `bootcamp` = 'Coding Dojo' WHERE (`id` = '12');
+UPDATE `tc1-George-Torres`.`tekcampers` SET `bootcamp` = 'Coding Dojo' WHERE (`id` = '7');
+UPDATE `tc1-George-Torres`.`tekcampers` SET `bootcamp` = 'DevMountain' WHERE (`id` = '25');
+UPDATE `tc1-George-Torres`.`tekcampers` SET `bootcamp` = 'Trilogy Education' WHERE (`id` = '29');
+UPDATE `tc1-George-Torres`.`tekcampers` SET `bootcamp` = 'U.S. Navy Bootcamp' WHERE (`id` = '2');
+UPDATE `tc1-George-Torres`.`tekcampers` SET `bootcamp` = 'SMU Coding Bootcamp' WHERE (`id` = '21');
+
+/* All students in ta-dylan have null value for bootcamp field */
 
 SELECT * FROM tekcampers;
