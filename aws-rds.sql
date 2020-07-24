@@ -1,3 +1,5 @@
+/* In order to create this .sql file in my Amazon RDS instance, I created the RDS instance with the default settings and chose MySQL. I then used a StackOverflow resource provided in the help channel to allow my RDS instance to permit inbound connections from anywhere. Once being able to connect to the RDS instance on my local machine and/or from my Cloud9 instance, I created a copy of of the original students database by using the mysqldump command and I put it into a file called "students.sql". I then imported the students database into my own MySQL RDS instance by using "mysql -u admin -p -h hostname students < students.sql", and then ran the file that I created from the first exercise by using "source aws-rds.sql".*/ 
+
 show databases;
 
 USE students;
@@ -112,6 +114,10 @@ SET education="Some College"
 WHERE id=12;
 
 UPDATE tekcampers
+SET education="Masters Degree"
+WHERE id=13;
+
+UPDATE tekcampers
 SET education="High School Diploma"
 WHERE id=14;
 
@@ -142,6 +148,10 @@ WHERE id=21;
 UPDATE tekcampers
 SET gender='M'
 WHERE id=22;
+
+UPDATE tekcampers
+SET education="Masters Degree"
+WHERE id=23;
 
 UPDATE tekcampers
 SET gender='M', education="Some College"
@@ -235,7 +245,10 @@ VALUES
     ("Hockey"),
     ("longboarding"),
     ("Reading"),
-    ("Growing Peppers");
+    ("Growing Peppers"),
+    ("Interior Decoration"),
+    ("Play Piano"),
+    ("EatSleepCode;");
     
 ALTER TABLE `tc1-George-Torres`.`tekcampers` 
 ADD COLUMN hobby_id int(11);
@@ -253,11 +266,14 @@ UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '15' WHERE (`id` = '8')
 UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '2' WHERE (`id` = '10');
 UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '13' WHERE (`id` = '11');
 UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '10' WHERE (`id` = '12');
+UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '22' WHERE (`id` = '13');
 UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '9' WHERE (`id` = '14');
 UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '3' WHERE (`id` = '15');
 UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '17' WHERE (`id` = '16');
 UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '7' WHERE (`id` = '17');
 UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '3' WHERE (`id` = '18');
+UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '3' WHERE (`id` = '22');
+UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '23' WHERE (`id` = '23');
 UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '14' WHERE (`id` = '29');
 UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '17' WHERE (`id` = '32');
 UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '3' WHERE (`id` = '35');
@@ -265,6 +281,7 @@ UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '1' WHERE (`id` = '19')
 UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '19' WHERE (`id` = '21');
 UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '18' WHERE (`id` = '25');
 UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '8' WHERE (`id` = '31');
+UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '24' WHERE (`id` = '33');
 UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '15' WHERE (`id` = '34');
 UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '21' WHERE (`id` = '37');
 UPDATE `tc1-George-Torres`.`tekcampers` SET `hobby_id` = '6' WHERE (`id` = '38');
